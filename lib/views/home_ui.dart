@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_iot_application_app/views/signin_ui.dart' show Signinui;
+import 'package:flutter_iot_application_app/views/signup_ui.dart' show Signupui;
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeUi extends StatelessWidget {
@@ -49,11 +51,14 @@ class HomeUi extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Login',
-                    style: TextStyle(color: Colors.black),
-                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Signinui(),
+                      ),
+                    );
+                  },
                   style: OutlinedButton.styleFrom(
                       fixedSize: Size(
                         150,
@@ -62,14 +67,21 @@ class HomeUi extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       )),
+                  child: Text(
+                    'Login',
+                    style: TextStyle(color: Colors.black),
+                  ),
                 ),
                 SizedBox(width: 20),
                 ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Signup',
-                    style: TextStyle(color: Colors.white),
-                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Signupui(),
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size(
                       150,
@@ -79,6 +91,10 @@ class HomeUi extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     backgroundColor: Colors.black,
+                  ),
+                  child: Text(
+                    'Signup',
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ],
